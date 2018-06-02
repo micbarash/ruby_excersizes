@@ -21,10 +21,3 @@ def substring(string, dictionary)
 	p resultHash;
 end
 substring("Howdy partner, sit down! How's it going?", dictionary);
-
-#if resultHash.key?(x) == false
-				#resultHash[x] = 1;
-			#else
-				#resultHash[x] += 1;
-			#end
-#**check if the key exists in the hash, add the key if need it or increment it if exists
