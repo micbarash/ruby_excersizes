@@ -22,6 +22,17 @@ module Enumerable
 		end
 		copyArray
 	end
-end
 
-array = ["a","b","c","d","e","k","i"]
+	def my_all?
+		self.my_each do |elt|
+			return false unless yield elt
+		end
+	end
+
+	def my_any?
+		self.my_each do |elt|
+			return true if yield elt
+		end
+		false
+	end
+end
