@@ -65,6 +65,24 @@ module Enumerable
 		end
 		mapped
 	end
+
+	def my_inject(initValue = nil)
+		memo = 0
+		if initValue != nil
+			memo = initValue
+		else 
+			memo = self[0]
+		end
+		self.my_each do |elt|
+			next if elt == self[0]
+			memo = yield(memo, elt)
+		end
+		memo
+	end
+
+	def multiplyEls # A method to test if my_inject works as planned
+		result = self.my_inject {|memo, elt| memo * elt }
+	end
 end
-array = [1,2,4,7,4,2,9]
-p array.my_map {|x| x + 1 }
+array = [1,2,3,4,5]
+p array.multiplyEls
